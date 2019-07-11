@@ -12,6 +12,9 @@ import android.content.pm.SigningInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
         Log.e("---", "--getJavaPackage---" + helper.getJavaPackage(this));
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
+        tv.setText(getJin());
     }
+
+    public native String getJin();
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
