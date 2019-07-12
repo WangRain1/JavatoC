@@ -5,6 +5,8 @@
 #ifndef JAVATOC_TESTT_HPP
 #define JAVATOC_TESTT_HPP
 
+#include "android/log.h"
+
 template <class T>
 class MyTemplateName{
 private:
@@ -23,6 +25,11 @@ public:
 template <class T>
 //此处必须加上<T> -- MyTemplateName<T>
 MyTemplateName<T>::MyTemplateName() {
+}
+
+template <class T>
+MyTemplateName<T>::~MyTemplateName() {
+    __android_log_print(ANDROID_LOG_ERROR,"wxy","析构函数");
 }
 
 template <class T>

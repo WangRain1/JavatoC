@@ -4,8 +4,11 @@
 
 #include <jni.h>
 #include <string>
+#include <set>
+#include <vector>
 #include "Test.h"
 #include "Testt.hpp"
+
 
 #define Jin(NAME) java_jin_##NAME
 
@@ -41,6 +44,12 @@ Java_com_example_ts_javatoc_MainActivity_getJin(JNIEnv *env, jobject instance) {
     MyTemplateName<int> *age = new MyTemplateName<int>();
     age->setIndex(2222);
     std::string as = std::to_string(age->getIndex());
+
+    std::vector<std::string> sv;
+    sv.push_back("s");
+    sv.pop_back();
+
+    std::set<std::string> set1;
 
     return env->NewStringUTF((sx.insert(0,as).c_str()));
 }
